@@ -1,10 +1,10 @@
-.
+
 import java.util.Scanner;
 
-public class Main {
+public class MyCalculator {
     public static Scanner scan;
 
-    public Main() {
+    public MyCalculator() {
     }
     public static void main(String[] args) {
         int opcio;
@@ -23,7 +23,12 @@ public class Main {
             switch (opcio) {
                 case 1:
                     try {
-                        exercici1();
+                        int n = 0;
+                        int p = 0;
+                        System.out.println("Introdueix dos enters separats per un espai: ");
+                        n = scan.nextInt();
+                        p = scan.nextInt();
+                        scan.nextLine();
                     } catch (Exception var5) {
                         var5.printStackTrace();
                     }
@@ -38,7 +43,7 @@ public class Main {
         } while(opcio != 0);
 
     }
-    public static void exercici1() {
+    public static void longPower(int n, int p) {
 
     }
 }
