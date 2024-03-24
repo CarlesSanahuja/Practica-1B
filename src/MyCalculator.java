@@ -1,4 +1,5 @@
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MyCalculator {
@@ -39,6 +40,35 @@ public class MyCalculator {
                         System.out.println(e);
                     }
                 case 2:
+                    try {
+                        int x = 0;
+                        int y = 0;
+                        System.out.println("Introduce dos enteros separados por un espacio: ");
+                        String input = scan.nextLine(); // Leer toda la línea de entrada
+                        String[] parts = input.split(" "); // Dividir la entrada en partes separadas por espacios
+
+                        if (parts.length != 2) {
+                            throw new InputMismatchException();
+                        }
+
+                        try {
+                            x = Integer.parseInt(parts[0]); // Convertir la primera parte en un entero
+                            y = Integer.parseInt(parts[1]); // Convertir la segunda parte en un entero
+                        } catch (NumberFormatException e) {
+                            throw new InputMismatchException();
+                        }
+
+                        if (y == 0) {
+                            throw new ArithmeticException();
+                        }
+
+
+                        division(x, y);
+                    } catch (ArithmeticException e) {
+                        System.out.println(" 'y' no pueden ser cero.");
+                    } catch (InputMismatchException e) {
+                        System.out.println("Deben ser dos números enteros.");
+                    }
                 case 3:
                 case 4:
                 case 5:
@@ -51,5 +81,8 @@ public class MyCalculator {
     }
     public static void longPower(int n, int p) {
         System.out.println(Math.pow(n,p));
+    }
+    public  static  void division(int x, int y){
+        System.out.println(x/y);
     }
 }
