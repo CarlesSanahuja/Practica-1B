@@ -14,7 +14,6 @@ public class MyCalculator {
             System.out.println("* 3. Exercici 3                                                         *");
             System.out.println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *");
             System.out.print("Entra una opció (0-4): ");
-
             opcio = scan.nextInt();
             scan.nextLine();
             switch (opcio) {
