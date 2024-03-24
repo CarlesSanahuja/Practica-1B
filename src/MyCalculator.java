@@ -15,7 +15,6 @@ public class MyCalculator {
             System.out.println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *");
             System.out.print("Entra una opció (0-4): ");
 
-
             opcio = scan.nextInt();
             scan.nextLine();
             switch (opcio) {
@@ -26,15 +25,17 @@ public class MyCalculator {
                         System.out.println("Introdueix dos enters separats per un espai: ");
                         n = scan.nextInt();
                         p = scan.nextInt();
+
                         scan.nextLine();
-                        if (n == 0 | p == 0){
-                            throw new ArithmeticException();
+                       if (n == 0 | p == 0){
+                            throw new ArithmeticException(" Ni n ni p poden ser zero.");
                         }
                         if (n < 0 | p < 0){
-                            throw new ArithmeticException();
+                            throw new ArithmeticException(" Ni n ni p poden ser negatius");
                         }
+                        longPower(n,p);
                     } catch (ArithmeticException e) {
-                        System.out.println(" Ni n ni p poden ser zero.");
+                        System.out.println(e);
                     }
                 case 2:
                 case 3:
@@ -48,6 +49,6 @@ public class MyCalculator {
 
     }
     public static void longPower(int n, int p) {
-
+        System.out.println(Math.pow(n,p));
     }
 }
