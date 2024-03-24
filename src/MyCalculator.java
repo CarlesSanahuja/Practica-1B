@@ -2,11 +2,9 @@
 import java.util.Scanner;
 
 public class MyCalculator {
-    public static Scanner scan;
-
-    public MyCalculator() {
-    }
+    public static Scanner scan = new Scanner(System.in);
     public static void main(String[] args) {
+
         int opcio;
         do {
             System.out.println("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *");
@@ -29,8 +27,14 @@ public class MyCalculator {
                         n = scan.nextInt();
                         p = scan.nextInt();
                         scan.nextLine();
-                    } catch (Exception var5) {
-                        var5.printStackTrace();
+                        if (n == 0 | p == 0){
+                            throw new ArithmeticException();
+                        }
+                        if (n < 0 | p < 0){
+                            throw new ArithmeticException();
+                        }
+                    } catch (ArithmeticException e) {
+                        System.out.println(" Ni n ni p poden ser zero.");
                     }
                 case 2:
                 case 3:
